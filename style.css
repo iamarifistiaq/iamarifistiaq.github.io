@@ -151,3 +151,8 @@ h3 {
 canvas {
   margin-top: 20px;
 }
+canvas {
+  max-width: 700px;
+  margin: 20px auto;
+  display: block;
+}
