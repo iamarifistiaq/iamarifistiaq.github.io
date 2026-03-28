@@ -120,3 +120,18 @@ h3 {
 .highlight em {
   color: #555;
 }
+.pub a, .highlight a {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #444;
+}
+
+.pub a:hover, .highlight a:hover {
+  text-decoration: underline;
+}
+
+.pub em {
+  color: #555;
+}
