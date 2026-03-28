@@ -148,3 +148,6 @@ h3 {
 .metrics strong {
   font-size: 20px;
 }
+canvas {
+  margin-top: 20px;
+}
