@@ -6,7 +6,32 @@
 <title>Arif Istiaq</title>
 <link rel="stylesheet" href="style.css">
 </head>
+  
+<script>
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://scholar.google.com/citations?user=PtXSjsEAAAAJ"))
+  .then(response => response.json())
+  .then(data => {
+    const html = data.contents;
 
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+
+    const stats = doc.querySelectorAll(".gsc_rsb_std");
+
+    if (stats.length >= 3) {
+      document.getElementById("citations").innerText = stats[0].innerText;
+      document.getElementById("hindex").innerText = stats[2].innerText;
+      document.getElementById("papers").innerText = document.querySelectorAll(".gsc_a_tr").length;
+    }
+  })
+  .catch(() => {
+    document.getElementById("citations").innerText = "View";
+    document.getElementById("hindex").innerText = "on";
+    document.getElementById("papers").innerText = "Scholar";
+  });
+</script>
+
+  
 <body>
 
 <header>
@@ -30,7 +55,21 @@
         Postdoctoral Associate at Washington University in St. Louis. 
         Investigating genomic imprinting in development, cancer, and epigenetic signaling.
       </p>
-
+<div class="metrics">
+  <div>
+    <strong id="citations">--</strong><br>
+    Citations
+  </div>
+  <div>
+    <strong id="hindex">--</strong><br>
+    h-index
+  </div>
+  <div>
+    <strong id="papers">--</strong><br>
+    Publications
+  </div>
+</div>
+      
       <div class="links">
         <a href="https://scholar.google.com/citations?user=PtXSjsEAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
         <a href="https://github.com/iamarifistiaq" target="_blank">GitHub</a>
