@@ -156,3 +156,10 @@ canvas {
   margin: 20px auto;
   display: block;
 }
+.card strong {
+  font-size: 16px;
+}
+
+.card em {
+  color: #555;
+}
