@@ -211,6 +211,7 @@ header {
   z-index: 1000;
 }
 
-body.dark header {
+body.dark {
   background: #0d0d0d;
+  color: #eee;
 }
