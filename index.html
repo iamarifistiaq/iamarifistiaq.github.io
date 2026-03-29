@@ -19,6 +19,7 @@
       <a href="#code">Code</a>
       <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
+      <button id="darkToggle">🌙</button>
     </nav>
   </div>
 </header>
@@ -288,6 +289,13 @@
 
 <!-- ✅ SINGLE clean script -->
 
+<script>
+const toggle = document.getElementById("darkToggle");
 
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
+</script>
+  
 </body>
 </html>
