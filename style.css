@@ -244,7 +244,7 @@ body {
 }
 .research-img {
   width: 10%;
-  max-width: 50px;   /* controls size */
+  max-width: 1000px;   /* controls size */
   height: auto;
   margin: 15px auto;
   display: block;
