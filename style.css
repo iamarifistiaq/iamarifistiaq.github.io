@@ -201,11 +201,18 @@ footer {
 /* ===== RESEARCH LAYOUT ===== */
 .research-flex {
   display: flex;
-  align-items: center;
+  align-items: center;     /* 🔥 vertical alignment fix */
+  justify-content: space-between;
   gap: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
-
+.research-flex {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;   /* subtle border */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 .research-image img {
   width: 260px;
   border-radius: 6px;
