@@ -292,13 +292,30 @@ header {
   padding: 15px 0;   /* reduce space */
 }
 
-.banner {
+/* RESET EVERYTHING FIRST */
+body {
+  margin: 0;
+}
+
+header {
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* REMOVE ALL DEFAULT SECTION SPACE */
+section {
   margin: 0;
   padding: 0;
 }
+
+/* BANNER FIX */
+.banner {
+  line-height: 0;   /* 🔥 THIS removes hidden spacing */
+}
+
 .banner img {
   width: 100%;
-  max-height: 180px;   /* limits size */
-  object-fit: contain; /* keeps full image */
+  height: auto;
   display: block;
 }
+line-height: 0;
