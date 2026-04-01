@@ -5,10 +5,11 @@ body {
   color: #111;
   background: #fff;
 }
+
 /* Layout */
 .container {
   width: 90%;
-  max-width: 1200px;   /* 🔥 bigger so nav fits */
+  max-width: 1200px;   /* wider so nav fits */
   margin: auto;
 }
 
@@ -20,7 +21,7 @@ header {
   padding: 12px 0;
 }
 
-/* Layout */
+/* Nav layout */
 .container.nav {
   display: flex;
   justify-content: space-between;
@@ -31,25 +32,28 @@ header {
 h1 {
   color: white;
   margin: 0;
+  font-size: 24px;
 }
 
-/* Navigation links (FIXED STRONG CONTRAST) */
+/* Navigation bar */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;           /* spacing between tabs */
+  flex-wrap: nowrap;   /* keep single line */
+}
+
+/* Navigation links */
 nav a {
-  font-size: 14px;        /* slightly smaller to fit */
+  font-size: 14px;
   font-weight: 500;
   color: white;
   text-decoration: none;
   position: relative;
-  white-space: nowrap;    /* 🔥 prevents breaking words */
-  opacity: 1;             /* 🔥 remove fading */
+  white-space: nowrap;  /* prevent line break */
 }
-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap;   /* 🔥 prevents second line */
-}
-/* Hover */
+
+/* Hover effect */
 nav a:hover {
   color: #ffffff;
 }
@@ -64,10 +68,6 @@ nav a::after {
   height: 2px;
   background: #4da6ff;
   transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
 }
 
 nav a:hover::after {
