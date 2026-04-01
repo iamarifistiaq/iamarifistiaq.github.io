@@ -1,47 +1,72 @@
-/* ===== CLEAN NAV RESET ===== */
-
-header {
-  background: #0b1f3a;
-  color: white;
-  padding: 12px 0;
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  color: #111;
+  background: #fff;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* layout */
-header .nav {
+/* ===== LAYOUT ===== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #0b1f3a;
+  color: white;
+  z-index: 1000;
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.container.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* title */
 header h1 {
   margin: 0;
-  color: white;
   font-size: 22px;
+  color: white;
 }
 
-/* nav container */
 header nav {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 18px;
 }
 
-/* nav links */
 header nav a {
   color: white;
-  font-size: 13px;
   text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
   white-space: nowrap;
 }
 
-/* hover */
 header nav a:hover {
   color: #4da6ff;
 }
 
+/* ===== BANNER ===== */
+.banner {
+  line-height: 0;
+}
 
-/* Hero */
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== HERO ===== */
 .hero {
   padding: 60px 0 40px;
 }
@@ -69,7 +94,7 @@ header nav a:hover {
   border-radius: 6px;
 }
 
-/* Metrics */
+/* ===== METRICS ===== */
 .metrics {
   display: flex;
   gap: 40px;
@@ -81,7 +106,7 @@ header nav a:hover {
   font-weight: 600;
 }
 
-/* Sections */
+/* ===== SECTIONS ===== */
 section {
   padding: 60px 0;
 }
@@ -98,12 +123,12 @@ h3 {
   font-weight: 600;
 }
 
-/* Cards */
+/* ===== CARDS ===== */
 .card {
   margin-bottom: 20px;
 }
 
-/* Publications */
+/* ===== PUBLICATIONS ===== */
 .pub {
   margin-bottom: 18px;
   padding-left: 15px;
@@ -129,7 +154,7 @@ h3 {
   text-decoration: underline;
 }
 
-/* Highlight papers */
+/* ===== HIGHLIGHT ===== */
 .highlight {
   margin-bottom: 25px;
   padding: 15px;
@@ -145,7 +170,7 @@ h3 {
   color: #555;
 }
 
-/* Links */
+/* ===== LINKS ===== */
 .links a {
   margin-right: 15px;
   font-size: 14px;
@@ -157,14 +182,14 @@ h3 {
   text-decoration: underline;
 }
 
-/* Graph */
+/* ===== GRAPH ===== */
 canvas {
   max-width: 700px;
   margin: 20px auto;
   display: block;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
   border-top: 1px solid #eee;
   padding: 30px 0;
@@ -172,14 +197,64 @@ footer {
   font-size: 13px;
   color: #777;
 }
-/* Dark mode */
+
+/* ===== RESEARCH LAYOUT ===== */
+.research-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.research-image img {
+  width: 260px;
+  border-radius: 6px;
+}
+
+.research-text {
+  flex: 1;
+}
+
+.research-flex:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* ===== ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== HOVER EFFECTS ===== */
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.3s ease;
+}
+
+.pub:hover {
+  transform: translateX(3px);
+  transition: 0.3s ease;
+}
+
+.highlight:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+
+/* ===== DARK MODE ===== */
 body.dark {
   background: #0d0d0d;
   color: #eee;
 }
 
 body.dark header {
-  border-bottom: 1px solid #333;
+  background: #111;
 }
 
 body.dark nav a {
@@ -199,6 +274,7 @@ body.dark .card {
   color: #ddd;
 }
 
+/* ===== DARK TOGGLE ===== */
 #darkToggle {
   margin-left: 20px;
   cursor: pointer;
@@ -206,71 +282,18 @@ body.dark .card {
   background: none;
   font-size: 16px;
 }
+
+/* ===== SMOOTH SCROLL ===== */
 html {
   scroll-behavior: smooth;
 }
-header {
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 1000;
-}
-/* Smooth global transition */
-body {
-  transition: background 0.4s ease, color 0.4s ease;
-}
 
-/* Fade-in animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Hover effects */
-.card:hover {
-  transform: translateY(-3px);
-  transition: 0.3s ease;
-}
-
-.pub:hover {
-  transform: translateX(3px);
-  transition: 0.3s ease;
-}
-
-.highlight:hover {
-  transform: scale(1.01);
-  transition: 0.3s ease;
-}
-
-.research-flex {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.research-image img {
-  width: 260px;
-  border-radius: 6px;
-}
-
-.research-text {
-  flex: 1;
-}
-
-/* Alternate layout */
-.research-flex:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* Mobile responsive */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
   .research-flex {
     flex-direction: column !important;
     align-items: flex-start;
@@ -280,75 +303,8 @@ body {
     width: 100%;
     max-width: 350px;
   }
-}
-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.hero-content {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
-header {
-  margin: 0;
-  padding: 15px 0;   /* reduce space */
-}
 
-/* RESET EVERYTHING FIRST */
-body {
-  margin: 0;
-}
-
-header {
-  margin: 0;
-  padding: 10px 0;
-}
-
-/* REMOVE ALL DEFAULT SECTION SPACE */
-section {
-  margin: 0;
-  padding: 0;
-}
-
-/* BANNER FIX */
-.banner {
-  line-height: 0;   /* 🔥 THIS removes hidden spacing */
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===== NAV FIX (SAFE OVERRIDE) ===== */
-
-/* Make nav stay in one line */
-header .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Ensure nav items are visible */
-header nav {
-  display: flex;
-  gap: 15px;
-}
-
-/* Force visible text */
-header nav a {
-  color: white !important;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Hover color */
-header nav a:hover {
-  color: #4da6ff !important;
+  header nav {
+    flex-wrap: wrap;
+  }
 }
