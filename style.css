@@ -287,17 +287,17 @@ nav {
   align-items: center;
   gap: 60px;
 }
-.banner {
-  width: 100%;
-  overflow: hidden;
+header {
+  margin: 0;
+  padding: 15px 0;   /* reduce space */
 }
 
+.banner {
+  margin: 0;
+  padding: 0;
+}
 .banner img {
   width: 100%;
-  height: 150px;   /* control size here */
-  object-fit: cover;
+  height: auto;      /* IMPORTANT: no cropping */
   display: block;
-}
-body {
-  margin: 0;
 }
